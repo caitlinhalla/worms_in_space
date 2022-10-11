@@ -1,0 +1,16 @@
+version: '3.8'
+services:
+  worms_in_space:
+    build: 
+      context: .
+      dockerfile: Dockerfile
+    ports:
+      - '4000:4000'
+    entrypoint: /bin/sh -c "mix phx.server"
+  test:
+    build: 
+      context: .
+      dockerfile: Dockerfile
+    ports:
+      - '4000:4000'
+    entrypoint: /bin/sh -c "mix test"
